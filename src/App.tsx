@@ -3,9 +3,11 @@ import { siteName, appIconLink } from './common/constants';
 import styles from './App.module.css'; // ✅ Import the CSS module
 
 const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
+  // { name: 'Home', href: '/' },
+  { name: 'Products', href: '/apps' },
+  { name: 'Docs', href: 'https://enlace-one.freshdesk.com/support/solutions', target:"_blank"},
+  { name: 'Help', href: 'https://enlace-one.freshdesk.com/support/tickets/new', target:"_blank" },
+  { name: 'Support Me', href: '/support' },
 ];
 
 function App() {
@@ -22,7 +24,9 @@ function App() {
         <ul className={styles.navbarLinks}>
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href}>{link.name}</a>
+              { link.target 
+              ? <a href={link.href} target={link.target} >{link.name}</a> 
+              : <a href={link.href} >{link.name}</a> }
             </li>
           ))}
         </ul>

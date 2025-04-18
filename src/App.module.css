@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.appIcon {
+  height: 3rem;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -74,10 +78,6 @@
 
   .navbarBrand {
     margin-bottom: 1rem;
-  }
-
-  .appIcon {
-    height: 3rem;
   }
 
   .navbarLinks {
