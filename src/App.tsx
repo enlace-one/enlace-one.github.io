@@ -18,7 +18,7 @@ const navLinks = [
     href: "https://enlace-one.freshdesk.com/support/tickets/new",
     target: "_blank",
   },
-  { name: "Support Me", href: "/support" },
+  { name: "Support Me", href: "https://patreon.com/EnlaceOne",  target: "_blank", },
 ];
 
 function App() {
