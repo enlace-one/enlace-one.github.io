@@ -122,7 +122,7 @@ has some features that others lack including markdown and keyboard shortcuts.
         name: "PyPi",
         url: "https://pypi.org/project/socx/",
       },
-      { name: "Github", url: "https://github.com/A-Management/socX" },
+      { name: "Github", url: "https://github.com/enlace-one/socX" },
     ],
     description: `socX is a command line tools with various features to fill 
     gaps that I had when using Windows. `,

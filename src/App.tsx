@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { siteName, appIconLink } from "./common/constants";
 import styles from "./App.module.css"; // ✅ Import the CSS module
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -23,7 +22,6 @@ const navLinks = [
 ];
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <div className={styles.root}>
