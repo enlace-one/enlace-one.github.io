@@ -79,7 +79,7 @@ const products = [
     links: [
       {
         name: "Chrome Web Store",
-        url: "https%3A//chromewebstore.google.com/detail/page-notes/aibhhfddbgmonidkapcjaicoajcomaac",
+        url: "https://chromewebstore.google.com/detail/page-notes/aibhhfddbgmonidkapcjaicoajcomaac",
       },
       { name: "Github", url: "https://github.com/enlace-one/Extension" },
     ],
