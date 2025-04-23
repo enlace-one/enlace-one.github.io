@@ -1,6 +1,6 @@
 import { siteName, appIconLink } from "./common/constants";
 import styles from "./App.module.css"; // ✅ Import the CSS module
-import { BrowserRouter, Routes, Route, Link, RouterProvider, HashRouter } from "react-router-dom";
+import { Routes, Route, Link, HashRouter } from "react-router-dom";
 import ProductList from "./products/views/productList/productList";
 import Portfolio from "./portfolio/views/portfolio/portfolio";
 import Home from "./home/views/home/home";
@@ -56,10 +56,13 @@ function App() {
         {/* Main Content */}
         <div className={styles.content}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<ProductList />} />
-            <Route path="/support" element={<p>Coming soon...</p>} />
-            <Route path="/portfolio" element={<Portfolio />} />
+            <Route  path="/" Component={HomeC} /> 
+            <Route  path="/products" Component={ProductListC}/>
+            <Route  path="/portfolio" Component={PortfolioC}/>
+            {/* <Route path="/" element={<Home />} /> */}
+            {/* <Route path="/products" element={<ProductList />} /> */}
+            {/* <Route path="/support" element={<p>Coming soon...</p>} /> */}
+            {/* <Route path="/portfolio" element={<Portfolio />} /> */}
           </Routes>
           {/* <RouterProvider router={router} />; */}
         </div>
@@ -67,5 +70,9 @@ function App() {
     </div>
   );
 }
+
+const HomeC = () => <Home />
+const PortfolioC = () => <Portfolio />
+const ProductListC = () => <ProductList />
 
 export default App;
