@@ -1,6 +1,6 @@
 import { siteName, appIconLink } from "./common/constants";
 import styles from "./App.module.css"; // ✅ Import the CSS module
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, RouterProvider, HashRouter } from "react-router-dom";
 import ProductList from "./products/views/productList/productList";
 import Portfolio from "./portfolio/views/portfolio/portfolio";
 import Home from "./home/views/home/home";
@@ -21,11 +21,15 @@ const navLinks = [
   { name: "Support Me", href: "https://patreon.com/EnlaceOne",  target: "_blank", },
 ];
 
+// const router = createHashRouter([
+//   ... routes configuration
+// ]);
+
 function App() {
 
   return (
     <div className={styles.root}>
-      <BrowserRouter>
+      <HashRouter>
         {/* Top Menu Bar */}
 
         <nav className={styles.navbar}>
@@ -57,8 +61,9 @@ function App() {
             <Route path="/support" element={<p>Coming soon...</p>} />
             <Route path="/portfolio" element={<Portfolio />} />
           </Routes>
+          {/* <RouterProvider router={router} />; */}
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
