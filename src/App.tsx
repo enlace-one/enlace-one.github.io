@@ -1,6 +1,6 @@
 import { siteName, appIconLink } from "./common/constants";
 import styles from "./App.module.css"; // ✅ Import the CSS module
-import { Routes, Route, Link, HashRouter, Navigate } from "react-router-dom";
+import { Routes, Route, Link, HashRouter } from "react-router-dom";
 import ProductList from "./products/views/productList/productList";
 import Portfolio from "./portfolio/views/portfolio/portfolio";
 import Home from "./home/views/home/home";
