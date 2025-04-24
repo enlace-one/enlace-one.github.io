@@ -1,29 +1,34 @@
 import { siteName, appIconLink } from "./common/constants";
 import styles from "./App.module.css"; // ✅ Import the CSS module
-import { Routes, Route, Link, HashRouter } from "react-router-dom";
+import { Routes, Route, Link, HashRouter, Navigate } from "react-router-dom";
 import ProductList from "./products/views/productList/productList";
 import Portfolio from "./portfolio/views/portfolio/portfolio";
 import Home from "./home/views/home/home";
+import { useEffect } from "react";
 
 const navLinks = [
-  // { name: 'Home', href: '/' },
-  { name: "Products", href: "/products" },
+  { name: "Products", href: "/products", target:"_self"},
   {
     name: "Docs",
-    href: "https://enlace-one.freshdesk.com/support/solutions",
+    href: "/docs",
     target: "_blank",
   },
   {
     name: "Help",
-    href: "https://enlace-one.freshdesk.com/support/tickets/new",
+    href: "/help",
     target: "_blank",
   },
-  { name: "Support Me", href: "https://patreon.com/EnlaceOne",  target: "_blank", },
+  { name: "Support Me", href: "/support-me",  target: "_blank", },
 ];
 
-// const router = createHashRouter([
-//   ... routes configuration
-// ]);
+const ExternalRedirect = ({ url }: { url: string }) => {
+  useEffect(() => {
+    window.location.replace(url);
+  }, [url]);
+
+  return null; // Optionally return a loading spinner or message
+};
+
 
 function App() {
 
@@ -41,13 +46,13 @@ function App() {
           <ul className={styles.navbarLinks}>
             {navLinks.map((link) => (
               <li key={link.name}>
-                {link.target ? (
+                {/* {link.target ? (
                   <a href={link.href} target={link.target}>
                     {link.name}
                   </a>
-                ) : (
-                  <Link to={link.href}>{link.name}</Link>
-                )}
+                ) : ( */}
+                  <Link to={link.href} target={link.target}>{link.name}</Link>
+                {/* )} */}
               </li>
             ))}
           </ul>
@@ -56,15 +61,13 @@ function App() {
         {/* Main Content */}
         <div className={styles.content}>
           <Routes>
-            <Route  path="/" Component={HomeC} /> 
-            <Route  path="/products" Component={ProductListC}/>
-            <Route  path="/portfolio" Component={PortfolioC}/>
-            {/* <Route path="/" element={<Home />} /> */}
-            {/* <Route path="/products" element={<ProductList />} /> */}
-            {/* <Route path="/support" element={<p>Coming soon...</p>} /> */}
-            {/* <Route path="/portfolio" element={<Portfolio />} /> */}
+            <Route path="/" Component={HomeC} /> 
+            <Route path="/products" Component={ProductListC}/>
+            <Route path="/portfolio" Component={PortfolioC}/>
+            <Route path="/docs" Component={() => <ExternalRedirect url="https://enlace-one.freshdesk.com/support/solutions" />} />
+            <Route path="/help" Component={() => <ExternalRedirect url="https://enlace-one.freshdesk.com/support/tickets/new" />} />
+            <Route path="/support-me" Component={() => <ExternalRedirect url="https://patreon.com/EnlaceOne" />} />
           </Routes>
-          {/* <RouterProvider router={router} />; */}
         </div>
       </HashRouter>
     </div>
