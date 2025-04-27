@@ -87,7 +87,7 @@ function Home() {
             {activeDocURL === "" && <>
                 <div>
                     <h2>Welcome to {SITE_NAME} Documenation!</h2>
-                    <p>Explore the document tree on the left to find what you need.</p>
+                    <p>Search above or use the document tree on the left if you are on a desktop device to find what you need.</p>
                 </div></>
             }
             {activeDocURL != "" && <DocsMarkdown setMarkdownRendered={setMarkdownRendered} activeDocURL={activeDocURL} />}
