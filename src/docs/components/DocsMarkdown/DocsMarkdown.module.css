@@ -1,6 +1,6 @@
 .markdownWrapper {
     width: 75%;
-    padding: 1rem;
+    padding: 0rem 1rem;
     overflow-wrap: break-word; /* <-- This forces wrapping inside words if needed */
     word-break: break-word;     /* <-- Break long words if necessary */
     white-space: normal;        /* <-- Allow normal wrapping, not nowrap */
@@ -19,6 +19,10 @@
     height: auto;    /* <-- Maintain aspect ratio */
     display: block;  /* <-- Optional: removes bottom whitespace */
     margin: 0.5rem 0; /* <-- Optional: little vertical margin */
+  }
+
+  .markdownWrapper h1 {
+    font-size: 2.2em;
   }
   
   

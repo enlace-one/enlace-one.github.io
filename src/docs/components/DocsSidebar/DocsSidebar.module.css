@@ -4,14 +4,14 @@
 }
 
 .sidebar {
-  position: fixed; /* <--- make it fixed */
-  top: 10%;
-  left: 0;
-  width: 20%; /* <-- match your wrapper width */
-  background-color: #f3f4f6;
-  padding: 1rem;
-  height: 100vh;
-  overflow-y: auto;
+  position: fixed;
+    top: 11%;
+    left: 0;
+    width: 20%;
+    background-color: #f3f4f6;
+    padding: 1rem;
+    height: 85vh;
+    overflow-y: auto;
 }
 
   

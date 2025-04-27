@@ -5,12 +5,14 @@ import { DOCS_GITHUB_RAW_ROOT_FOLDER } from '../../../common/constants';
 
 interface DocsMarkdownProps {
   activeDocURL: string;
+  setMarkdownRendered: (b: boolean) => void;
 }
 
-const DocsMarkdown: React.FC<DocsMarkdownProps> = ({ activeDocURL }) => {
+const DocsMarkdown: React.FC<DocsMarkdownProps> = ({ activeDocURL, setMarkdownRendered }) => {
   const [markdown, setMarkdown] = useState<string>('');
 
   useEffect(() => {
+    setMarkdownRendered(false)
     const fetchMarkdown = async () => {
       if (!activeDocURL) return;
       try {
@@ -23,6 +25,7 @@ const DocsMarkdown: React.FC<DocsMarkdownProps> = ({ activeDocURL }) => {
         console.error('Error fetching file:', error);
         setMarkdown('Error loading file.');
       }
+      setMarkdownRendered(true)
     };
 
     fetchMarkdown();

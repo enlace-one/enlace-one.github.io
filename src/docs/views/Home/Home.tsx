@@ -15,6 +15,7 @@ function Home() {
     const [fileTree, setFileTree] = useState<FileNode[]>([]);
     const [flatFileTree, setFlatFileTree] = useState<FileNode[]>([]);
     const markdownRef = useRef<HTMLDivElement>(null);
+    const [markdownRendered, setMarkdownRendered] = useState(true);
 
 
     const displayPath = (path: string) => {
@@ -66,6 +67,20 @@ function Home() {
       }, [fileTree]);
 
 
+    useEffect(() => {
+        const currentHash = window.location.hash.slice(1); // remove leading "#"
+        const [path, queryString = ""] = currentHash.split("?");
+        const params = new URLSearchParams(queryString);
+        const currentFile = params.get("file") || '';
+
+        // Set activeDocURL from URL
+        if (currentFile && currentFile !== activeDocURL) {
+        setActiveDocURL(currentFile);
+        }
+
+    }, [flatFileTree])
+
+
     return <>
     <div className={styles.docsHome}>
         <DocsSidebar setActiveDocURL={setActiveDocURL} fileTree={fileTree} setFileTree={setFileTree}/>
@@ -77,10 +92,10 @@ function Home() {
                     <p>Explore the document tree on the left to find what you need.</p>
                 </div></>
             }
-            {activeDocURL != "" && <DocsMarkdown activeDocURL={activeDocURL} />}
+            {activeDocURL != "" && <DocsMarkdown setMarkdownRendered={setMarkdownRendered} activeDocURL={activeDocURL} />}
             </div>
         </div>
-        <ContentsSidebar activeDocURL={activeDocURL} parentElement={markdownRef.current}/>
+        <ContentsSidebar markdownRendered={markdownRendered} activeDocURL={activeDocURL} parentElement={markdownRef.current}/>
 
     </>
 }
