@@ -1,6 +1,7 @@
 .sidebarWrapper {
   display: flex;
   width: 20%;
+  text-align: left;
 }
 
 .sidebar {
@@ -14,6 +15,11 @@
     overflow-y: auto;
 }
 
+.sidebar button {
+  color: black;
+  text-align: left;
+}
+
   
   .sidebarTitle {
     font-size: 1.25rem;
@@ -22,8 +28,9 @@
   }
   
   .treeNode {
-    margin-left: 1rem;
+    margin-left: .5rem;
   }
+  
   
   .fileButton {
     /* color: rgb(0, 191, 191); */
@@ -32,7 +39,7 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    font-size: 1rem;
+    font-size: .8em;
   }
   
   .folderButton {
@@ -41,7 +48,7 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    font-size: 1rem;
+    font-size: .8em;
   }
   
   .loadingText {

@@ -14,6 +14,7 @@ const products = [
       "TypeScript",
       "Modular CSS",
       "JavaScript",
+      "DNS Record Management"
     ],
     links: [
       {
@@ -147,6 +148,46 @@ has some features that others lack including markdown and keyboard shortcuts.
       </>
     ),
   },
+  // {
+  //   id:"enlace.one",
+  //   name: "Enlace.one Website",
+  //   technologies: [
+  //     "React",
+  //     "TypeScript",
+  //     "Modular CSS",
+  //     "JavaScript",
+  //     "Github Pages", 
+  //     "DNS Record Management"
+  //   ],
+  //   links: [
+  //     {
+  //       name: "Website",
+  //       url: "https://enlace.one/",
+  //     },
+  //     { name: "Github", url: "https://github.com/enlace-one/enlace-one.github.io" },
+  //   ],
+  //   description: `The website you are currently one is a React project `,
+  //   body: (
+  //     <>
+  //       <p>It's features are subject to change but include:</p>
+  //       <ul>
+  //         <li>
+  //           Find files by name with optional regex and case-insensitive flags
+  //         </li>
+  //         <li>Get information on a URL, IP, or domain</li>
+  //         <li>Combine several CSVs that have roughly the same columns</li>
+  //       </ul>
+
+  //       <p>
+  //         Since there are a million and one command line tools with different
+  //         flags and features, you can simply run "socx" and it will ask if you
+  //         want to use interactive mode where it guides you through the options.
+  //         Power users are still, of course, free to use flags as their hearts
+  //         desire.{" "}
+  //       </p>
+  //     </>
+  //   ),
+  // },
   // Other products...
 ];
 
