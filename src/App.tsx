@@ -12,7 +12,7 @@ const navLinks = [
   {
     name: "Docs",
     href: "/docs",
-    target: "_blank",
+    target: "_self",
   },
   {
     name: "Help",
@@ -65,8 +65,8 @@ function App() {
             <Route path="/" Component={HomeC} /> 
             <Route path="/products" Component={ProductListC}/>
             <Route path="/portfolio" Component={PortfolioC}/>
-            <Route path="/docs" Component={() => <ExternalRedirect url="https://enlace-one.freshdesk.com/support/solutions" />} />
-            <Route path="/_docs" Component={DocsHomeC} />
+            {/* <Route path="/docs" Component={() => <ExternalRedirect url="https://enlace-one.freshdesk.com/support/solutions" />} /> */}
+            <Route path="/docs" Component={DocsHomeC} />
             <Route path="/help" Component={() => <ExternalRedirect url="https://enlace-one.freshdesk.com/support/tickets/new" />} />
             <Route path="/support-me" Component={() => <ExternalRedirect url="https://patreon.com/EnlaceOne" />} />
           </Routes>

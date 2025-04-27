@@ -1,6 +1,4 @@
-import React, {useState, useEffect, act, useRef } from 'react';
-import ReactMarkdown from 'react-markdown';
-import { Heading } from "@aws-amplify/ui-react";
+import {useState, useEffect, useRef } from 'react';
 import { DOCS_GITHUB_ROOT_FOLDER, SITE_NAME } from '../../../common/constants';
 import DocsSidebar from '../../components/DocsSidebar/DocsSideBar';
 import DocsMarkdown from '../../components/DocsMarkdown/DocsMarkdown';
@@ -69,7 +67,7 @@ function Home() {
 
     useEffect(() => {
         const currentHash = window.location.hash.slice(1); // remove leading "#"
-        const [path, queryString = ""] = currentHash.split("?");
+        const [, queryString = ""] = currentHash.split("?");
         const params = new URLSearchParams(queryString);
         const currentFile = params.get("file") || '';
 

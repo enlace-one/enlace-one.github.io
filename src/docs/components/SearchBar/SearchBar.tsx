@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './SearchBar.module.css';
 import { FileNode } from "../../types";
-import { DOCS_GITHUB_ROOT_FOLDER } from '../../../common/constants';
 
 interface SearchBarProps {
   setActiveDocURL: (url: string) => void;
@@ -10,7 +9,6 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ fileTree, setActiveDocURL }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<FileNode[]>([]);
   const searchBarRef = useRef<HTMLDivElement>(null);
 
@@ -75,11 +73,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ fileTree, setActiveDocURL }) => {
       />
       {results.length > 0 && (
         <div className={styles.results}>
-          {loading && (
-            <p key="loading" className={styles.resultItem}>
-              Loading...
-            </p>
-          )}
           {results.map((r) => (
             <p
               key={r.path}

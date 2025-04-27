@@ -1,15 +1,14 @@
-import { SITE_NAME } from "../../../common/constants"
+import { APP_ICON_LINK, SITE_NAME } from "../../../common/constants"
+import styles from "./home.module.css"
 
 export default function Home() {
 
-    return <><h1>{SITE_NAME}</h1>
-        <div className="card">
-            <p>
-            Welcome! 
-            </p>
-        </div>
+    return <div className={styles.home}>
+        <img className={styles.appIcon} src={APP_ICON_LINK} alt="App Icon" />
+        <h1>Welcome to {SITE_NAME}!</h1>
         <p className="read-the-docs">
            Click an option in the top menu to learn more
-        </p></>
+        </p>
+        </div>
 
 }
