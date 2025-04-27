@@ -151,7 +151,7 @@ has some features that others lack including markdown and keyboard shortcuts.
 ];
 
 const ProductList = () => (
-  <>
+  <div className={styles.productListRoot}>
     <h1>Product List</h1>
     <div className={styles.toc}>
         {/* <span>Contents: </span> */}
@@ -192,7 +192,7 @@ const ProductList = () => (
         </div>
       ))}
     </div>
-  </>
+  </div>
 );
 
 export default ProductList;

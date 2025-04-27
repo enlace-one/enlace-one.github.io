@@ -1,10 +1,11 @@
-import { siteName, appIconLink } from "./common/constants";
+import { SITE_NAME as SITE_NAME, APP_ICON_LINK } from "./common/constants";
 import styles from "./App.module.css"; // ✅ Import the CSS module
 import { Routes, Route, Link, HashRouter } from "react-router-dom";
-import ProductList from "./products/views/productList/productList";
-import Portfolio from "./portfolio/views/portfolio/portfolio";
+import ProductList from "./products/views/ProductList/ProductList";
+import Portfolio from "./portfolio/views/Portfolio/Portfolio";
 import Home from "./home/views/home/home";
 import { useEffect } from "react";
+import DocsHome from "./docs/views/Home/Home";
 
 const navLinks = [
   { name: "Products", href: "/products", target:"_self"},
@@ -39,8 +40,8 @@ function App() {
 
         <nav className={styles.navbar}>
           <a className={styles.navbarBrand} href="/">
-            <img className={styles.appIcon} src={appIconLink} alt="App Icon" />
-            <h2>{siteName || "MyApp"}</h2>
+            <img className={styles.appIcon} src={APP_ICON_LINK} alt="App Icon" />
+            <h2>{SITE_NAME || "MyApp"}</h2>
           </a>
 
           <ul className={styles.navbarLinks}>
@@ -65,6 +66,7 @@ function App() {
             <Route path="/products" Component={ProductListC}/>
             <Route path="/portfolio" Component={PortfolioC}/>
             <Route path="/docs" Component={() => <ExternalRedirect url="https://enlace-one.freshdesk.com/support/solutions" />} />
+            <Route path="/_docs" Component={DocsHomeC} />
             <Route path="/help" Component={() => <ExternalRedirect url="https://enlace-one.freshdesk.com/support/tickets/new" />} />
             <Route path="/support-me" Component={() => <ExternalRedirect url="https://patreon.com/EnlaceOne" />} />
           </Routes>
@@ -74,6 +76,7 @@ function App() {
   );
 }
 
+const DocsHomeC = () => <DocsHome />
 const HomeC = () => <Home />
 const PortfolioC = () => <Portfolio />
 const ProductListC = () => <ProductList />

@@ -105,3 +105,8 @@ img {
   margin-bottom: 2%
   /* text-align: left; */
 }
+
+.productListRoot {
+  padding: 2rem;
+  max-width: 1400px;
+}

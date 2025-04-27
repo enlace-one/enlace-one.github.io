@@ -1,8 +1,8 @@
-import { siteName } from "../../../common/constants"
+import { SITE_NAME } from "../../../common/constants"
 
 export default function Home() {
 
-    return <><h1>{siteName}</h1>
+    return <><h1>{SITE_NAME}</h1>
         <div className="card">
             <p>
             Welcome! 

@@ -1,0 +1,25 @@
+.markdownWrapper {
+    width: 75%;
+    padding: 1rem;
+    overflow-wrap: break-word; /* <-- This forces wrapping inside words if needed */
+    word-break: break-word;     /* <-- Break long words if necessary */
+    white-space: normal;        /* <-- Allow normal wrapping, not nowrap */
+  }
+  
+  /* Optional: Make markdown text even more mobile-friendly */
+  @media (max-width: 1000px) {
+    .markdownWrapper {
+      padding: 0.5rem;
+      font-size: 0.95rem; /* Slightly smaller font if you want */
+    }
+  }
+
+  .markdownWrapper img {
+    max-width: 100%; /* <-- Image can never be wider than the container */
+    height: auto;    /* <-- Maintain aspect ratio */
+    display: block;  /* <-- Optional: removes bottom whitespace */
+    margin: 0.5rem 0; /* <-- Optional: little vertical margin */
+  }
+  
+  
+  

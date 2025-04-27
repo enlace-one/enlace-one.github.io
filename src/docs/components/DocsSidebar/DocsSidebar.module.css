@@ -1,0 +1,63 @@
+.sidebarWrapper {
+  display: flex;
+  width: 20%;
+}
+
+.sidebar {
+  position: fixed; /* <--- make it fixed */
+  top: 10%;
+  left: 0;
+  width: 20%; /* <-- match your wrapper width */
+  background-color: #f3f4f6;
+  padding: 1rem;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+  
+  .sidebarTitle {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .treeNode {
+    margin-left: 1rem;
+  }
+  
+  .fileButton {
+    /* color: rgb(0, 191, 191); */
+    /* text-decoration: underline; */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+  }
+  
+  .folderButton {
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+  }
+  
+  .loadingText {
+    font-size: 1rem;
+  }
+  
+
+/* --- Responsive hidden sidebar --- */
+@media (max-width: 900px) {
+  .sidebarWrapper {
+    width: 0;
+  }
+
+  .sidebar {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
