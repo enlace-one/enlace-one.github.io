@@ -34,6 +34,7 @@ const DocsMarkdown: React.FC<DocsMarkdownProps> = ({ activeDocURL, setMarkdownRe
   return (
     <div className={styles.markdownWrapper}>
       <ReactMarkdown>{markdown}</ReactMarkdown>
+      <p style={{paddingBottom: "10rem"}}></p>
     </div>
   );
 };

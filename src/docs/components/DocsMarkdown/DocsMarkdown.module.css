@@ -1,5 +1,6 @@
 .markdownWrapper {
     width: 75%;
+    padding-bottom: 5rem;
     padding: 0rem 1rem;
     overflow-wrap: break-word; /* <-- This forces wrapping inside words if needed */
     word-break: break-word;     /* <-- Break long words if necessary */

@@ -113,7 +113,7 @@
   }
 
   .content {
-    padding-top: .5rem; /* Increase padding for mobile navbar height */
+    padding-top: 2rem; /* Increase padding for mobile navbar height */
   }
 
   .navbarBrand {
