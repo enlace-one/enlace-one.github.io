@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import ProductList from "../../../common/components/ProductList/ProductList";
+
 export default function Portfolio() {
   const [valid, setValid] = useState(false);
   const [value, setValue] = useState<string | null>(null);
@@ -48,14 +50,14 @@ export default function Portfolio() {
     return <p>Unauthorized</p>;
   }
 
+  const header = `${value}'s Portfolio`
+
   return (
     <>
-      <h1>{value}'s Portfolio</h1>
-      <p>
-        Welcome! While this portfolio is generally kept anonymous, the link 
+        
+      <ProductList is_portfolio={true} header={header} description=" Welcome! While this portfolio is generally kept anonymous, the link 
         you used was authenticated via a salted hash so you can verify the 
-        owner of this site. Now feel free to explore the above tabs to get an idea of the authors work!
-      </p>
+        owner of this site. "/>
       {/* Your portfolio content */}
     </>
   );

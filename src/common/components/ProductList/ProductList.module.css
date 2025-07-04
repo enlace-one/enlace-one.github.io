@@ -1,0 +1,112 @@
+img {
+  border-style: solid;
+  border-width: .1rem;
+}
+
+.productList {
+    display: flex;
+    flex-wrap: wrap;
+    text-align:left;
+    gap: 1rem;
+  }
+  
+  .productCard {
+    /* background-color: #f9f9f9;
+    border: 1px solid #ddd; */
+    padding: 1rem;
+    /* border-radius: 8px;
+    width: 250px;
+    text-align: center; */
+  }
+  
+  .largeImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .productCard h2 {
+    /* font-size: 1.25rem; */
+    margin: 0.5rem 0;
+    scroll-margin-top: 100px; /* adjust to your header height */
+  }
+
+  .productCard i {
+    font-size: 1.1rem;
+    /* margin-bottom: 1rem; */
+  }
+  
+  .productCard p, span {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .productCard li {
+    font-size: 1.2rem;
+    margin-bottom: .4rem;
+  }
+  
+  .productCard a {
+    /* color: #00bfbf; */
+    text-decoration: none;
+  }
+  
+  .productCard a:hover {
+    text-decoration: underline;
+  }
+
+  .mainLink {
+    font-weight: bold;
+  }
+  /* Right-aligned image */
+.inlineImageRight {
+  float: right;
+  vertical-align: middle;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  max-width: 50%;
+  max-height: 20rem;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Left-aligned image */
+.inlineImageLeft {
+  float: left;
+  vertical-align: middle;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  max-width: 50%;
+  max-height: 20rem;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Clearfix for container */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+  
+
+.tocLink {
+  margin: 10px 0;
+  color: #040909;
+  text-decoration: none;
+}
+
+.tocLink:hover {
+  text-decoration: underline;
+}
+
+.toc {
+  margin-bottom: 2%
+  /* text-align: left; */
+}
+
+.productListRoot {
+  padding: 2rem;
+  max-width: 1400px;
+}

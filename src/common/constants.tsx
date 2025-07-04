@@ -8,3 +8,4 @@ export const APP_ICON_LINK = "https://raw.githubusercontent.com/enlace-one/commo
 export const DOCS_GITHUB_RAW_ROOT_FOLDER = "https://raw.githubusercontent.com/enlace-one/enlace_docs/main/"
 export const DOCS_GITHUB_ROOT_FOLDER = "https://api.github.com/repos/enlace-one/enlace_docs/contents/"
 export const SITE_NAME = "Enlace"
+
