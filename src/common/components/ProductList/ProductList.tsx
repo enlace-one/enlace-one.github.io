@@ -229,13 +229,17 @@ const ProductList: React.FC<ProductListProps> = ({ is_portfolio, header, descrip
         <p>{description}</p>
         {products.map((product, index) => (
           <>
-            <a
+            {/* <a
               href={`#${product.id}`}
               key={product.id}
               className={styles.tocLink}
+            > */}
+             <span
+              key={product.id}
+              
             >
               {product.name}
-            </a>
+            </span>
             {index < products.length - 1 && " | "}
           </>
         ))}
