@@ -1,5 +1,9 @@
 # Developer Information
 
+```
+npm run dev
+```
+
 ## Deploy
 Run the below to both build and deploy
 '''

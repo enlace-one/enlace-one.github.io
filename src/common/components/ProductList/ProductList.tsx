@@ -11,8 +11,39 @@ interface ProductListProps {
 const ProductList: React.FC<ProductListProps> = ({ is_portfolio, header, description}) => {
   const products = [
     {
+      id: "enlace-factors",
+      name: "Enlace Factors",
+      mainImage: (
+        <img
+                className={styles.inlineImageRight}
+                src="https://raw.githubusercontent.com/enlace-one/common_static/main/product_images/Enlace Factors Popup TOTP List.png"
+                alt={`Enlace Factors image`}
+          ></img>
+      ),
+      status: "Supported", 
+      technologies: ["AWS Lambda", "AWS Dynamo", "Python", "AWS Cognito", "JavaScript", "CSS", "Chrome APIs"],
+      links: [
+        {
+          name: "Chrome Web Store",
+          url: "https://chromewebstore.google.com/detail/enlace-factors/gkagbinmanpfoeojghjdgkaobmjogcfp",
+        },
+        { name: "Website", url: "https://factors.enlace.one" },
+      ],
+      description: `A simple MFA code storage application that syncs across devices and encrypts client side with your password.`,
+      textBody: (
+        <span>
+          You can configure a keyboard shortcut so you can automatically enter the codes to get you into your account as quickly as possible. 
+
+          Easily register by scanning the QR code in the the current tab, in a file, or with your camera.
+
+          Enlace Factors has support for the standard Time-based One-Time Password (TOTP) format as well as for Okta Verify's QR code format.
+        </span>
+      )
+    },
+    {
       id: "data-tracker",
       name: "Data Tracker Mobile-First Web Site",
+      status: "Nearing end of support", 
       technologies: [
         "React",
         "AWS Amplify",
@@ -109,6 +140,7 @@ const ProductList: React.FC<ProductListProps> = ({ is_portfolio, header, descrip
     {
       id: "page-notes",
       name: "Page Notes Browser Extension",
+      status: "Semi-supported", 
       mainImage: (
         <img
           className={styles.inlineImageRight}
@@ -159,6 +191,7 @@ const ProductList: React.FC<ProductListProps> = ({ is_portfolio, header, descrip
     {
       id: "socx",
       name: "socX Command Line Tool",
+      status: "Supported", 
       technologies: ["Python"],
       links: [
         {
@@ -179,14 +212,6 @@ const ProductList: React.FC<ProductListProps> = ({ is_portfolio, header, descrip
             <li>Get information on a URL, IP, or domain</li>
             <li>Combine several CSVs that have roughly the same columns</li>
           </ul>
-
-          <p>
-            Since there are a million and one command line tools with different
-            flags and features, you can simply run "socx" and it will ask if you
-            want to use interactive mode where it guides you through the
-            options. Power users are still, of course, free to use flags as
-            their hearts desire.{" "}
-          </p>
         </>
       ),
     },
@@ -197,6 +222,7 @@ const ProductList: React.FC<ProductListProps> = ({ is_portfolio, header, descrip
     products.push({
       id:"enlace.one",
       name: "Enlace.one Website",
+      status: "Supported", 
       technologies: [
         "React",
         "TypeScript",
@@ -250,6 +276,7 @@ const ProductList: React.FC<ProductListProps> = ({ is_portfolio, header, descrip
             <h2 id={product.id}>{product.name}</h2>
             <div className={styles.clearfix}>
               {product?.mainImage}
+              <b>Status: {product.status}</b><br/>
               <i>Technologies Involved: {product.technologies.join(", ")}</i>
               <p>{product.description}</p>
               <div className={styles.links}>
