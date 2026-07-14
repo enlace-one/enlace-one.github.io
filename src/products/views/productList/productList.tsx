@@ -3,7 +3,7 @@ import ProductListComponent from "../../../common/components/ProductList/Product
 const ProductList = () => (
   // <div className={styles.productListRoot}>
     <>
-    <ProductListComponent is_portfolio={false} header="Product List" description=""/></>
+    <ProductListComponent header="Product List" description=""/></>
   // </div>
 );
 

@@ -1,14 +1,13 @@
 import styles from "./productList.module.css";
-import pageNotesImage from "../../../assets/product_images/page-notes-sidepanel-example.png";
-import pageNotesClipBoxImageSmall from "../../../assets/product_images/page-notes-clipbox-example-small.png";
+// import pageNotesImage from "../../../assets/product_images/page-notes-sidepanel-example.png";
+// import pageNotesClipBoxImageSmall from "../../../assets/product_images/page-notes-clipbox-example-small.png";
 
 interface ProductListProps {
-  is_portfolio: boolean;
   header: string;
   description: string;
 }
 
-const ProductList: React.FC<ProductListProps> = ({ is_portfolio, header, description}) => {
+const ProductList: React.FC<ProductListProps> = ({ header, description}) => {
   const products = [
     {
       id: "enlace-factors",
@@ -40,154 +39,154 @@ const ProductList: React.FC<ProductListProps> = ({ is_portfolio, header, descrip
         </span>
       )
     },
-    {
-      id: "data-tracker",
-      name: "Data Tracker Mobile-First Web Site",
-      status: "Nearing end of support", 
-      technologies: [
-        "React",
-        "AWS Amplify",
-        "AWS Cognito",
-        "AWS DynamoDB",
-        "TypeScript",
-        "Modular CSS",
-        "JavaScript",
-        "DNS Record Management",
-      ],
-      links: [
-        {
-          name: "Launch",
-          url: "https://datatracker.enlace.one",
-        },
-        {
-          name: "Github",
-          url: "https://github.com/enlace-one/data-tracker-react/tree/master",
-        },
-      ],
-      description: `This app allows you to track and visualize just about any data you would 
-    want to enter once a day (at most). The use cases include tracking workouts, habbits, hobbies, hours of sleep, etc.`,
-      body: (
-        <>
-          <h3>Advantages</h3>
-          <div className={styles.clearfix}>
-            {/* <img className={styles.inlineImage} src={pageNotesClipBoxImageSmall}  alt={`page notes  image`}></img> */}
-            <span>
-              There are other products that do this, but Data Tracker has some
-              advantages over the rest.
-            </span>
+    // {
+    //   id: "data-tracker",
+    //   name: "Data Tracker Mobile-First Web Site",
+    //   status: "Nearing end of support", 
+    //   technologies: [
+    //     "React",
+    //     "AWS Amplify",
+    //     "AWS Cognito",
+    //     "AWS DynamoDB",
+    //     "TypeScript",
+    //     "Modular CSS",
+    //     "JavaScript",
+    //     "DNS Record Management",
+    //   ],
+    //   links: [
+    //     {
+    //       name: "Launch",
+    //       url: "https://datatracker.enlace.one",
+    //     },
+    //     {
+    //       name: "Github",
+    //       url: "https://github.com/enlace-one/data-tracker-react/tree/master",
+    //     },
+    //   ],
+    //   description: `This app allows you to track and visualize just about any data you would 
+    // want to enter once a day (at most). The use cases include tracking workouts, habbits, hobbies, hours of sleep, etc.`,
+    //   body: (
+    //     <>
+    //       <h3>Advantages</h3>
+    //       <div className={styles.clearfix}>
+    //         {/* <img className={styles.inlineImage} src={pageNotesClipBoxImageSmall}  alt={`page notes  image`}></img> */}
+    //         <span>
+    //           There are other products that do this, but Data Tracker has some
+    //           advantages over the rest.
+    //         </span>
 
-            <p>
-              1. It is easier and faster to enter data into Data Tracker each
-              day.{" "}
-            </p>
-            <p>This is because:</p>
-            <ul>
-              <li>
-                It supports default values and will automatically enter them
-                when the app is opened each day.
-              </li>
-              <li>
-                It supports customizable macros allowing you to set entries
-                easily off of other entries and the current date.
-              </li>
-              <li>
-                The default view allows for easy selection and entry of data.
-              </li>
-            </ul>
-            <p>
-              2. It allows for the easy import/export of your data via CSV files
-              so you do not get locked in.
-            </p>
-            <p>
-              3. It supports complex values such as weight * reps and time1 -
-              time2
-            </p>
-            <p>
-              4. It offers the ability to graph entries for multiple categories
-              and compare them
-            </p>
-          </div>
-          {is_portfolio && (
-            <div className={styles.clearfix}>
-              <img
-                className={styles.inlineImageRight}
-                src="https://raw.githubusercontent.com/enlace-one/common_static/main/topics/work-colorful.svg"
-                alt={`data tracker image`}
-              ></img>
-              <img
-                className={styles.inlineImageRight}
-                src="https://raw.githubusercontent.com/enlace-one/common_static/main/topics/phone-black.svg"
-                alt={`data tracker image`}
-              ></img>
-              <h3>Homemade Icons</h3>
-              <span>
-                Data Tracker boasts a large selection of icons to add some
-                personalization and fun to the app. Feel free to put in support
-                tickets if you have any specific requests for new icons. I
-                created all of the icons in the app - from the favicon to the
-                menu icons to the category topic icons. I would like to shoutout{" "}
-                <a href="https://freesvgeditor.com/en/svg-editor-online">
-                  this handy site
-                </a>{" "}
-                for allowing me to easily create the icons without downloading
-                any specialized software.
-              </span>
-            </div>
-          )}
-        </>
-      ),
-    },
-    {
-      id: "page-notes",
-      name: "Page Notes Browser Extension",
-      status: "Semi-supported", 
-      mainImage: (
-        <img
-          className={styles.inlineImageRight}
-          src={pageNotesImage}
-          alt={`page notes image`}
-        />
-      ),
-      technologies: ["JavaScript", "CSS", "Chrome APIs"],
-      links: [
-        {
-          name: "Chrome Web Store",
-          url: "https://chromewebstore.google.com/detail/page-notes/aibhhfddbgmonidkapcjaicoajcomaac",
-        },
-        { name: "Github", url: "https://github.com/enlace-one/Extension" },
-      ],
-      description: `Page Notes is a browser extension that I designed to tie private notes 
-    to URLs and retrieve them.`,
-      textBody: (
-        <span>
-          Page Notes provides a markdown editor in the side panel that can be
-          opened based on the URL of the current tab or through searching. While
-          I am not the only one who has had this idea, I believe my
-          implementation is quite clean and has some features that others lack
-          including markdown and keyboard shortcuts.
-        </span>
-      ),
+    //         <p>
+    //           1. It is easier and faster to enter data into Data Tracker each
+    //           day.{" "}
+    //         </p>
+    //         <p>This is because:</p>
+    //         <ul>
+    //           <li>
+    //             It supports default values and will automatically enter them
+    //             when the app is opened each day.
+    //           </li>
+    //           <li>
+    //             It supports customizable macros allowing you to set entries
+    //             easily off of other entries and the current date.
+    //           </li>
+    //           <li>
+    //             The default view allows for easy selection and entry of data.
+    //           </li>
+    //         </ul>
+    //         <p>
+    //           2. It allows for the easy import/export of your data via CSV files
+    //           so you do not get locked in.
+    //         </p>
+    //         <p>
+    //           3. It supports complex values such as weight * reps and time1 -
+    //           time2
+    //         </p>
+    //         <p>
+    //           4. It offers the ability to graph entries for multiple categories
+    //           and compare them
+    //         </p>
+    //       </div>
+    //       {is_portfolio && (
+    //         <div className={styles.clearfix}>
+    //           <img
+    //             className={styles.inlineImageRight}
+    //             src="https://raw.githubusercontent.com/enlace-one/common_static/main/topics/work-colorful.svg"
+    //             alt={`data tracker image`}
+    //           ></img>
+    //           <img
+    //             className={styles.inlineImageRight}
+    //             src="https://raw.githubusercontent.com/enlace-one/common_static/main/topics/phone-black.svg"
+    //             alt={`data tracker image`}
+    //           ></img>
+    //           <h3>Homemade Icons</h3>
+    //           <span>
+    //             Data Tracker boasts a large selection of icons to add some
+    //             personalization and fun to the app. Feel free to put in support
+    //             tickets if you have any specific requests for new icons. I
+    //             created all of the icons in the app - from the favicon to the
+    //             menu icons to the category topic icons. I would like to shoutout{" "}
+    //             <a href="https://freesvgeditor.com/en/svg-editor-online">
+    //               this handy site
+    //             </a>{" "}
+    //             for allowing me to easily create the icons without downloading
+    //             any specialized software.
+    //           </span>
+    //         </div>
+    //       )}
+    //     </>
+    //   ),
+    // },
+    // {
+    //   id: "page-notes",
+    //   name: "Page Notes Browser Extension",
+    //   status: "Semi-supported", 
+    //   mainImage: (
+    //     <img
+    //       className={styles.inlineImageRight}
+    //       src={pageNotesImage}
+    //       alt={`page notes image`}
+    //     />
+    //   ),
+    //   technologies: ["JavaScript", "CSS", "Chrome APIs"],
+    //   links: [
+    //     {
+    //       name: "Chrome Web Store",
+    //       url: "https://chromewebstore.google.com/detail/page-notes/aibhhfddbgmonidkapcjaicoajcomaac",
+    //     },
+    //     { name: "Github", url: "https://github.com/enlace-one/Extension" },
+    //   ],
+    //   description: `Page Notes is a browser extension that I designed to tie private notes 
+    // to URLs and retrieve them.`,
+    //   textBody: (
+    //     <span>
+    //       Page Notes provides a markdown editor in the side panel that can be
+    //       opened based on the URL of the current tab or through searching. While
+    //       I am not the only one who has had this idea, I believe my
+    //       implementation is quite clean and has some features that others lack
+    //       including markdown and keyboard shortcuts.
+    //     </span>
+    //   ),
 
-      body: (
-        <>
-          <h3>Clip Box Feature</h3>
-          {/* <div className={styles.clearfix}> */}
-          <img
-            className={styles.inlineImageLeft}
-            src={pageNotesClipBoxImageSmall}
-            alt={`page notes  image`}
-          ></img>
-          <span>
-            I took the opportunity to fix another problem I encountered:
-            retrieving very commonly used values and doing so securely. Page
-            Notes has a "ClipBox" feature that supports text, textarea, and
-            password style input. The values are stored securely - encrypted and
-            salted - and can be easily copied using a keyboard shortcuts.
-          </span>
-          {/* </div> */}
-        </>
-      ),
-    },
+    //   body: (
+    //     <>
+    //       <h3>Clip Box Feature</h3>
+    //       {/* <div className={styles.clearfix}> */}
+    //       <img
+    //         className={styles.inlineImageLeft}
+    //         src={pageNotesClipBoxImageSmall}
+    //         alt={`page notes  image`}
+    //       ></img>
+    //       <span>
+    //         I took the opportunity to fix another problem I encountered:
+    //         retrieving very commonly used values and doing so securely. Page
+    //         Notes has a "ClipBox" feature that supports text, textarea, and
+    //         password style input. The values are stored securely - encrypted and
+    //         salted - and can be easily copied using a keyboard shortcuts.
+    //       </span>
+    //       {/* </div> */}
+    //     </>
+    //   ),
+    // },
     {
       id: "socx",
       name: "socX Command Line Tool",
@@ -218,34 +217,34 @@ const ProductList: React.FC<ProductListProps> = ({ is_portfolio, header, descrip
     // Other products...
   ];
 
-  if (is_portfolio) {
-    products.push({
-      id:"enlace.one",
-      name: "Enlace.one Website",
-      status: "Supported", 
-      technologies: [
-        "React",
-        "TypeScript",
-        "Modular CSS",
-        "JavaScript",
-        "Github Pages",
-        "DNS Record Management"
-      ],
-      links: [
-        {
-          name: "Website",
-          url: "https://enlace.one/",
-        },
-        { name: "Github", url: "https://github.com/enlace-one/enlace-one.github.io" },
-      ],
-      description: `The website you are currently on is a React project. Once you're done here, browse through some of the menu options`,
-      body: (
-        <>
-          <p>It's features are subject to change but include:</p>
-        </>
-      ),
-    })
-  }
+  // if (is_portfolio) {
+  //   products.push({
+  //     id:"enlace.one",
+  //     name: "Enlace.one Website",
+  //     status: "Supported", 
+  //     technologies: [
+  //       "React",
+  //       "TypeScript",
+  //       "Modular CSS",
+  //       "JavaScript",
+  //       "Github Pages",
+  //       "DNS Record Management"
+  //     ],
+  //     links: [
+  //       {
+  //         name: "Website",
+  //         url: "https://enlace.one/",
+  //       },
+  //       { name: "Github", url: "https://github.com/enlace-one/enlace-one.github.io" },
+  //     ],
+  //     description: `The website you are currently on is a React project. Once you're done here, browse through some of the menu options`,
+  //     body: (
+  //       <>
+  //         <p>It's features are subject to change but include:</p>
+  //       </>
+  //     ),
+  //   })
+  // }
 
   return (
     <div className={styles.productListRoot}>

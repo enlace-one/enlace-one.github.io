@@ -27,7 +27,7 @@
   /* --- Responsive hidden sidebar on small screens --- */
 @media (max-width: 1100px) {
   .markdownWrapper {
-    width: 90%;
+    width: 80%;
   }
 }
 

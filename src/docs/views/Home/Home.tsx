@@ -1,5 +1,5 @@
 import {useState, useEffect, useRef } from 'react';
-import { DOCS_GITHUB_ROOT_FOLDER, SITE_NAME } from '../../../common/constants';
+import { DOCS_GITHUB_ROOT_FOLDER } from '../../../common/constants';
 import DocsSidebar from '../../components/DocsSidebar/DocsSideBar';
 import DocsMarkdown from '../../components/DocsMarkdown/DocsMarkdown';
 import styles from "./Home.module.css"
@@ -84,13 +84,7 @@ function Home() {
         <DocsSidebar setActiveDocURL={setActiveDocURL} fileTree={fileTree} setFileTree={setFileTree}/>
         <div className={styles.body} ref={markdownRef}>
             <SearchBar setActiveDocURL={setActiveDocURL} fileTree={flatFileTree} />
-            {activeDocURL === "" && <>
-                <div>
-                    <h2>Welcome to {SITE_NAME} Documenation!</h2>
-                    <p>Search above or use the document tree on the left if you are on a desktop device to find what you need.</p>
-                </div></>
-            }
-            {activeDocURL != "" && <DocsMarkdown setMarkdownRendered={setMarkdownRendered} activeDocURL={activeDocURL} />}
+            <DocsMarkdown setMarkdownRendered={setMarkdownRendered} activeDocURL={activeDocURL} />
             </div>
         </div>
         <ContentsSidebar markdownRendered={markdownRendered} activeDocURL={activeDocURL} parentElement={markdownRef.current}/>
