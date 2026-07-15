@@ -8,18 +8,19 @@ import { useEffect } from "react";
 import DocsHome from "./docs/views/Home/Home";
 
 const navLinks = [
+  { name: "Home", href: "/", target:"_self"},
   { name: "Products", href: "/products", target:"_self"},
   {
     name: "Docs",
     href: "/docs",
     target: "_self",
   },
-  {
-    name: "Help",
-    href: "/help",
-    target: "_blank",
-  },
-  { name: "Support Me", href: "/support-me",  target: "_blank", },
+  // {
+  //   name: "Help",
+  //   href: "/help",
+  //   target: "_blank",
+  // },
+  // { name: "Support Me", href: "/support-me",  target: "_blank", },
 ];
 
 const ExternalRedirect = ({ url }: { url: string }) => {
